@@ -1,4 +1,7 @@
 package com.metacoding.order.orders;
 
-public class OrderStatus {
+public enum OrderStatus {
+    PENDING,
+    COMPLETED,
+    CANCELLED
 }

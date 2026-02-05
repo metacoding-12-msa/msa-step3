@@ -1,4 +1,7 @@
 package com.metacoding.delivery.deliveries;
 
-public class DeliveryStatus {
+public enum DeliveryStatus {
+    PENDING,        
+    COMPLETED,      
+    CANCELLED       
 }
