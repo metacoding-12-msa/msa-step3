@@ -14,10 +14,8 @@ public class Delivery {
     private int id;
     private int orderId;
     private String address;
-    
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status;
-    
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -29,16 +27,16 @@ public class Delivery {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
-
+    // 배달 생성
     public static Delivery create(int orderId, String address) {
         return new Delivery(orderId, address, DeliveryStatus.PENDING);
     }
-    
+    // 배달 완료
     public void complete() {
         this.status = DeliveryStatus.COMPLETED;
         this.updatedAt = LocalDateTime.now();
     }
-    
+    // 배달 취소
     public void cancel() {
         this.status = DeliveryStatus.CANCELLED;
         this.updatedAt = LocalDateTime.now();

@@ -26,8 +26,14 @@ public class Product {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
-
-    public static Product create(String productName, int quantity, Long price) {
-        return new Product(productName, quantity, price);
+    // 재고 감소
+    public void decreaseQuantity(int quantity) {
+        this.quantity -= quantity;
+        this.updatedAt = LocalDateTime.now();
+    }
+    // 재고 증가
+    public void increaseQuantity(int quantity) {
+        this.quantity += quantity;
+        this.updatedAt = LocalDateTime.now();
     }
 }

@@ -28,7 +28,7 @@ public class OrderItem {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
-
+    // 주문 아이템 생성
     public static OrderItem create(int orderId, int productId, int quantity, Long price) {
         return new OrderItem(orderId, productId, quantity, price);
     }
